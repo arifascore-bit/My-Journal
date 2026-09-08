@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jurnal Graves Galaxy V2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stars"></div>
+<img src="https://i.imgur.com/8KmNpws.png" class="cat-astronaut" alt="kucing astronot">
+
+<div class="container">
+  <h1>🌌 Jurnal Graves Galaxy V2</h1>
+  <p class="subtitle">Haii pejuang autoimun! Catat yuk 🚀</p>
+  <div class="streak">🔥 Streak: <span id="streak">0</span> hari</div>
+
+  <div class="card">
+    <h2>📅 <span id="today"></span></h2>
+
+    <h3>😊 Gimana Mood Hari Ini?</h3>
+    <div class="mood">
+      <button onclick="setMood('😊')">😊 Baik</button>
+      <button onclick="setMood('😐')">😐 Biasa</button>
+      <button onclick="setMood('😫')">😫 Gak Enak</button>
+    </div>
+
+    <h3>🍽️ Makanan Hari Ini</h3>
+    <textarea id="makanan" placeholder="Telur, Nasi merah, Serabi..."></textarea>
+
+    <h3>🤒 Gejala yg Dirasakan</h3>
+    <div class="checkbox-group">
+      <label><input type="checkbox" value="Biduran"> Biduran 👹</label>
+      <label><input type="checkbox" value="Gatal"> Gatal 😖</label>
+      <label><input type="checkbox" value="Batuk Malam"> Batuk Malam 😷</label>
+      <label><input type="checkbox" value="Lelah"> Lelah 🥱</label>
+      <label><input type="checkbox" value="Jantung Berdebar"> Jantung Berdebar 💓</label>
+    </div>
+    <textarea id="catatan" placeholder="Catatan tambahan..."></textarea>
+
+    <button onclick="simpanData()">💾 Simpan Jurnal Hari Ini</button>
+  </div>
+
+  <div class="card">
+    <h2>📊 Grafik Gejala</h2>
+    <canvas id="grafik" width="400" height="200"></canvas>
+  </div>
+
+  <div class="card">
+    <h2>📚 Riwayat</h2>
+    <div id="riwayat"></div>
+    <button onclick="exportPDF()">📄 Export PDF ke Dokter</button>
+    <button class="btn-backup" onclick="backupData()">⬇️ Backup Data</button>
+  </div>
+</div>
+
+<audio id="notifSound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
